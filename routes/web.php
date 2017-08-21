@@ -20,3 +20,9 @@
     Route::get('/signup','UsersController@create')->name('signup');
     //会员
     Route::resource('users','UsersController');
+    /*
+     * Sessions 会话控制
+    */
+    Route::get('login', 'SessionsController@create')->name('login');
+    Route::post('login', 'SessionsController@store')->name('login');
+    Route::delete('logout', 'SessionsController@destroy')->name('logout');
